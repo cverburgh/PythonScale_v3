@@ -22,9 +22,8 @@ def testLeds():
 	sleep(3)
 
 	lcd.addTextToTop("Blinking No Go")
+	lcd.addTextToTop("Press btn to cont.")
 	leds.blinkNoGoLeds()
-
-	sleep(3)
 
 	lcd.addTextToTop("CycleLeds 1")
 	leds.cycleLeds(leds.noGoLeds)
