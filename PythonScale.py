@@ -1,6 +1,7 @@
 ﻿import Testing as test
 import time
 import RPi.GPIO as GPIO
+GPIO.setwarnings(False) 
 GPIO.setmode(GPIO.BCM)
 
 import sys
@@ -108,4 +109,3 @@ except Exception as e:
 
 finally:
     pass
-
