@@ -1,9 +1,12 @@
 ﻿from RPi_GPIO_i2c_LCD import lcd
+from time import sleep
 # Address of i2c backpack on screen
 i2c_address = 0x27
 
 # initialize the display
 lcdDisplay = lcd.HD44780(i2c_address)
+
+clearDelay = 0.2
 
 def screenOn():
     lcdDisplay.backlight("on")
@@ -12,18 +15,14 @@ def screenOff():
     lcdDisplay.backlight("off")
 
 def clearText():
-    lcdDisplay.set("                                        ", 1)
-    lcdDisplay.set("                                        ", 2)
-    lcdDisplay.set("                                        ", 3)
-    lcdDisplay.set("                                        ", 4)
-
-    #lcdDisplay.clear()
+    lcdDisplay.clear()
+    sleep(clearDelay)
 
 def clearLine(line):
     lcdDisplay.set("                                        ", line)
+    sleep(clearDelay)
 
 def setTextOnLine(text, line):
-    text = fillLine(text)
     clearLine(line)
     lcdDisplay.set(text, line)
 
