@@ -4,7 +4,7 @@ import Testing as test
 
 # GPIO - buttons
 ackPin = 25
-# exitPin = 27
+exitPin = 27
 # simPin = 22
 
 if (test.mode == True):
@@ -12,13 +12,11 @@ if (test.mode == True):
     exitPin = 22
     # simPin = 27
 
-
-   
 btnAck = btn(ackPin, "pullDown")     # 17 Acknowledge and clear warning
-# btnExit = btn(exitPin, "pullDown")    # 27 Exit the program
-# btnSimData = btn(simPin, "pullDown") # 22 Simulate scale data
+btnExit = btn(exitPin, "pullDown")    # 27 Exit the program
 
-#btnShutdown = SetupPin(18, GPIO.OUT, False)
+# btnSimData = btn(simPin, "pullDown") # 22 Simulate scale data
+# btnShutdown = SetupPin(18, GPIO.OUT, False)
 
 # This button simulates data coming in from the serial port
-#btnSimData = leds.Pin(27, GPIO.IN, False) 
+# btnSimData = leds.Pin(27, GPIO.IN, False) 
