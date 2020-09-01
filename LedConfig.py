@@ -17,6 +17,11 @@ noGoLed3  = led.Led(26, False)     # NoGo 3
 noGoLeds = [noGoLed1, noGoLed2, noGoLed3]
 allLeds = [statusLed, goLed, noGoLed1, noGoLed2, noGoLed3]
 
+def setStatusLed(onOrOff):
+    if onOrOff == "on":
+        statusLed.turnOn()
+    else:
+        statusLed.turnOff()
 
 def fastBlink(led, numOfBlinks):
     for x in range(numOfBlinks):
