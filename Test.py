@@ -21,22 +21,22 @@ def testLeds():
 
 	sleep(3)
 
-	lcd.addTextToBottom("Blinking No Go")
+	lcd.addTextToTop("Blinking No Go")
 	leds.blinkNoGoLeds()
 
 	sleep(3)
 
-	lcd.addTextToBottom("CycleLeds 1")
+	lcd.addTextToTop("CycleLeds 1")
 	leds.cycleLeds(leds.noGoLeds)
 
 	sleep(3)
 
-	lcd.addTextToBottom("CycleLeds 2")
+	lcd.addTextToTop("CycleLeds 2")
 	leds.cycleLeds2(leds.noGoLeds)
 
 	sleep(3)
 
-	lcd.addTextToBottom("Blink all LEDs")
+	lcd.addTextToTop("Blink all LEDs")
 	leds.blinkAll()
 
 	sleep(3)
@@ -62,7 +62,7 @@ def testLcd():
 	lcd.setTextOnLine("    0    ", 3)
 	lcd.screenOff()
 	
-	sleep(5)
+	sleep(3)
 	lcd.clearText()
 	lcd.screenOn()
 
@@ -77,9 +77,9 @@ def testLcd():
 	lcd.setTextOnLine("    1    ", 3)
 	sleep(1)
 	lcd.setTextOnLine("    0    ", 3)
-
-	sleep(5)
 	lcd.clearText()
+
+	sleep(3)
 
 	lcd.setText("scroll up", "1", "2", "3")
 	sleep(3)
@@ -91,7 +91,7 @@ def testLcd():
 	sleep(0.5)
 	lcd.addTextToBottom("7")
 	
-	sleep(5)
+	sleep(3)
 	lcd.clearText()
 
 	lcd.setText("3", "2", "1", "scroll down")
@@ -104,7 +104,7 @@ def testLcd():
 	sleep(0.5)
 	lcd.addTextToTop("7")
 
-	sleep(5)
+	sleep(3)
 	lcd.clearText()
 
 	lcd.setText("powering off", "in 5 seconds")

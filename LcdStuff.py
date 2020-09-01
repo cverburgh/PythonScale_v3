@@ -12,6 +12,7 @@ def screenOn():
     lcdDisplay.backlight("on")
 
 def screenOff():
+    sleep(clearDelay)
     lcdDisplay.backlight("off")
 
 def clearText():
