@@ -23,6 +23,7 @@ testingMode = test.mode
 pressAckMsg = GeneralSetup.pressAckMsg
 
 def alert(msg1, msg2 = "", msg3 = ""):
+    lcd.screenOn()
     lcd.setText(msg1, msg2, msg3, pressAckMsg)
     leds.blinkNoGoLeds()
     lcd.setText(readyText)
