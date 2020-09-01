@@ -9,7 +9,7 @@ import ButtonConfig as btns
 import LcdStuff as lcd
 
 def testLeds():
-	
+	leds.setStatusLed("on")
 
 def testLcd():
 	lcd.screenOn();
