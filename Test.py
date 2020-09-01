@@ -101,4 +101,5 @@ def testLcd():
 	sleep(1)
 	lcd.screenOff()
 
+testLeds()
 testLcd()
