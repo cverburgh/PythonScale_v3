@@ -17,7 +17,7 @@ def clearText():
     lcdDisplay.set("", 3)
     lcdDisplay.set("", 4)
 
-    lcd.clear()
+    lcdDisplay.clear()
 
 def setTextOnLine(text, line):
     lcdDisplay.set(text, line)
