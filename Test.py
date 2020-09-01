@@ -27,12 +27,12 @@ def testLeds():
 	sleep(3)
 
 	lcd.addTextToBottom("CycleLeds 1")
-	leds.cycleLeds()
+	leds.cycleLeds(leds.noGoLeds)
 
 	sleep(3)
 
 	lcd.addTextToBottom("CycleLeds 2")
-	leds.cycleLeds2()
+	leds.cycleLeds2(leds.noGoLeds)
 
 	sleep(3)
 
