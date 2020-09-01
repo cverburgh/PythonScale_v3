@@ -11,15 +11,36 @@ import LcdStuff as lcd
 lcd.screenOn();
 
 def testLeds():
-	lcd.addTextToTop("Turning on status LED")
+	lcd.addTextToTop("Status LED > ON")
 	leds.setStatusLed("on")
 	
 	sleep(3)
 
-	lcd.addTextToTop("Turning off status LED")
-	leds.setStatusLed("on")
+	lcd.addTextToTop("Status LED > OFF")
+	leds.setStatusLed("off")
 
 	sleep(3)
+
+	lcd.addTextToBottom("Blinking No Go")
+	led.blinkNoGoLeds()
+
+	sleep(3)
+
+	lcd.addTextToBottom("CycleLeds 1")
+	led.cycleLeds()
+
+	sleep(3)
+
+	lcd.addTextToBottom("CycleLeds 2")
+	led.cycleLeds2()
+
+	sleep(3)
+
+	lcd.addTextToBottom("Blink all LEDs")
+	led.blinkAll()
+
+	sleep(3)
+
 
 
 def testLcd():
