@@ -17,31 +17,45 @@ def clearText():
     lcdDisplay.set("                                        ", 3)
     lcdDisplay.set("                                        ", 4)
 
-    lcdDisplay.clear()
+    #lcdDisplay.clear()
+
+def clearLine(line):
+    lcdDisplay.set("                                        ", line)
 
 def setTextOnLine(text, line):
     text = fillLine(text)
+    clearLine(line)
     lcdDisplay.set(text, line)
 
 def setText(line1 = "", line2 = "", line3 = "", line4 = ""):
-    lcdDisplay.set(fillLine(line1), 1)
-    lcdDisplay.set(fillLine(line2), 2)
-    lcdDisplay.set(fillLine(line3), 3)
-    lcdDisplay.set(fillLine(line4), 4)
+    clearText()
+
+    lcdDisplay.set(line1, 1)
+    lcdDisplay.set(line2, 2)
+    lcdDisplay.set(line3, 3)
+    lcdDisplay.set(line4, 4)
 
 def addTextToTop(text):
     # add to top, lose the bottom
-    lcdDisplay.set(fillLine(lcdDisplay.get(3)), 4)
-    lcdDisplay.set(fillLine(lcdDisplay.get(2)), 3)
-    lcdDisplay.set(fillLine(lcdDisplay.get(1)), 2)
-    lcdDisplay.set(fillLine(text), 1)
+    clearLine(4)
+    lcdDisplay.set(lcdDisplay.get(3), 4)
+    clearLine(3)
+    lcdDisplay.set(lcdDisplay.get(2), 3)
+    clearLine(2)
+    lcdDisplay.set(lcdDisplay.get(1), 2)
+    clearLine(1)
+    lcdDisplay.set(text, 1)
 
 def addTextToBottom(text):
     # add to bottom, lose the first line
-    lcdDisplay.set(fillLine(lcdDisplay.get(2)), 1)
-    lcdDisplay.set(fillLine(lcdDisplay.get(3)), 2)
-    lcdDisplay.set(fillLine(lcdDisplay.get(4)), 3)
-    lcdDisplay.set(fillLine(text), 4)
+    clearLine(1)
+    lcdDisplay.set(lcdDisplay.get(2), 1)
+    clearLine(2)
+    lcdDisplay.set(lcdDisplay.get(3), 2)
+    clearLine(3)
+    lcdDisplay.set(lcdDisplay.get(4), 3)
+    clearLine(4)
+    lcdDisplay.set(text, 4)
 
 def fillLine(text):
     while (len(text) < 40):
