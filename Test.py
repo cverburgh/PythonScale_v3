@@ -44,12 +44,14 @@ def testLeds():
 
 
 def testLcd():
+	lcd.clearText()
+	
 	lcd.setText("Test Line 1", "Test Line 2", "Test Line 3", "Test Line 4")
 
 	sleep(3)
 	lcd.clearText()
 
-	lcd.setText("Turning off LCD", "in", "   5   ","seconds")
+	lcd.setText("Turning off LCD", "in", "   5   ","       seconds")
 	sleep(1)
 	lcd.setTextOnLine("    4    ", 3)
 	sleep(1)
@@ -66,7 +68,7 @@ def testLcd():
 	lcd.clearText()
 	lcd.screenOn()
 
-	lcd.setText("Clearing screen", "in", "   5   ","seconds")
+	lcd.setText("Clearing screen", "in", "   5   ","       seconds")
 	sleep(1)
 	lcd.setTextOnLine("    4    ", 3)
 	sleep(1)
