@@ -1,6 +1,5 @@
 ﻿import ptvsd
 # for VS debugging
-ptvsd.enable_attach('piscale')
 import Testing as test
 import time
 import RPi.GPIO as GPIO
