@@ -1,6 +1,4 @@
-﻿import ptvsd
-# for VS debugging
-import Testing as test
+﻿import Testing as test
 import time
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
