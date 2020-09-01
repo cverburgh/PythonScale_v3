@@ -12,16 +12,12 @@ def screenOff():
     lcdDisplay.backlight("off")
 
 def clearText():
-    lcdDisplay.set("", 1)
-    lcdDisplay.set("", 2)
-    lcdDisplay.set("", 3)
-    lcdDisplay.set("", 4)
+    lcdDisplay.set("                                        ", 1)
+    lcdDisplay.set("                                        ", 2)
+    lcdDisplay.set("                                        ", 3)
+    lcdDisplay.set("                                        ", 4)
 
-    lcdDisplay.clear(1)
-    lcdDisplay.clear(2)
-    lcdDisplay.clear(3)
-    lcdDisplay.clear(4)
-
+    lcdDisplay.clear()
 
 def setTextOnLine(text, line):
     lcdDisplay.set(text, line)
