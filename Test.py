@@ -47,7 +47,7 @@ lcd.setTextOnLine("    0    ", 3)
 sleep(5)
 lcd.clearText()
 
-lcd.SetText("scroll up", "1", "2", "3")
+lcd.setText("scroll up", "1", "2", "3")
 sleep(3)
 lcd.addTextToBottom("4")
 sleep(0.5)
