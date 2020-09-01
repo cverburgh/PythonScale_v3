@@ -12,14 +12,15 @@ def screenOff():
     lcdDisplay.backlight("off")
 
 def clearText():
-    #lcdDisplay.set("                                        ", 1)
-    #lcdDisplay.set("                                        ", 2)
-    #lcdDisplay.set("                                        ", 3)
-    #lcdDisplay.set("                                        ", 4)
+    lcdDisplay.set("                                        ", 1)
+    lcdDisplay.set("                                        ", 2)
+    lcdDisplay.set("                                        ", 3)
+    lcdDisplay.set("                                        ", 4)
 
     lcdDisplay.clear()
 
 def setTextOnLine(text, line):
+    text = fillLine(text)
     lcdDisplay.set(text, line)
 
 def setText(line1 = "", line2 = "", line3 = "", line4 = ""):
@@ -41,3 +42,9 @@ def addTextToBottom(text):
     lcdDisplay.set(lcdDisplay.get(3), 2)
     lcdDisplay.set(lcdDisplay.get(4), 3)
     lcdDisplay.set(text, 4)
+
+def fillLine(text):
+    while (len(text) < 40):
+        text = text + " "
+
+    return text
