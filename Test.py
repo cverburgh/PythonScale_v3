@@ -22,22 +22,22 @@ def testLeds():
 	sleep(3)
 
 	lcd.addTextToBottom("Blinking No Go")
-	led.blinkNoGoLeds()
+	leds.blinkNoGoLeds()
 
 	sleep(3)
 
 	lcd.addTextToBottom("CycleLeds 1")
-	led.cycleLeds()
+	leds.cycleLeds()
 
 	sleep(3)
 
 	lcd.addTextToBottom("CycleLeds 2")
-	led.cycleLeds2()
+	leds.cycleLeds2()
 
 	sleep(3)
 
 	lcd.addTextToBottom("Blink all LEDs")
-	led.blinkAll()
+	leds.blinkAll()
 
 	sleep(3)
 
