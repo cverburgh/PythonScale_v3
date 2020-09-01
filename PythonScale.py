@@ -20,7 +20,7 @@ testingMode = test.mode
 pressAckMsg = GeneralSetup.pressAckMsg
 
 lcd.screenOn()
-lcd.setText("testing the". "LCD screnn", "", "")
+lcd.setText("testing the", "LCD screnn", "", "")
 
 
 def alert(msg1, msg2 = "", msg3 = ""):
