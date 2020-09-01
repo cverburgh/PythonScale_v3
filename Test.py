@@ -12,7 +12,7 @@ lcd.screenOn();
 
 lcd.setText("Test Line 1", "Test Line 2", "Test Line 3", "Test Line 4")
 
-sleep(5)
+sleep(3)
 lcd.clearText()
 
 lcd.setText("Turning off LCD", "in", "   5   ","seconds")

@@ -12,10 +12,10 @@ def screenOff():
     lcdDisplay.backlight("off")
 
 def clearText():
-    lcdDisplay.set("                                        ", 1)
-    lcdDisplay.set("                                        ", 2)
-    lcdDisplay.set("                                        ", 3)
-    lcdDisplay.set("                                        ", 4)
+    #lcdDisplay.set("                                        ", 1)
+    #lcdDisplay.set("                                        ", 2)
+    #lcdDisplay.set("                                        ", 3)
+    #lcdDisplay.set("                                        ", 4)
 
     lcdDisplay.clear()
 
