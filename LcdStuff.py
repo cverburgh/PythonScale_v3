@@ -1,46 +1,40 @@
-﻿from Adafruit_CharLCD import Adafruit_CharLCD as afLcd
+﻿from RPi_GPIO_i2c_LCD import lcd
+# Address of i2c backpack on screen
+i2c_address = 0x27
 
-lcd = afLcd()
-lcd.begin(20,4)
-lcd.clear()
-lcdText = ["", "", "", ""]
+# initialize the display
+lcdDisplay = lcd.HD44780(i2c_address)
 
+def screenOn():
+    lcdDisplay.backlight("off")
+
+def screenOff():
+    lcdDisplay.backligh("on")
 
 def clearText():
-    lcdText = ["", "", "", ""]
+    lcdDisplay.set("", 1)
+    lcdDisplay.set("", 2)
+    lcdDisplay.set("", 3)
+    lcdDisplay.set("", 4)
+
     lcd.clear()
 
-def setText(line = "", line1 = "", line2 = "", line3 = ""):
-    if (line1 == "" and line2 == "" and line3 == ""):
-        line0 = line[:20]
-        line1 = line[20:40]
-        line2 = line[40:60]
-        line3 = line[60:80]
-    else:
-        line0 = line
-
-    lcdText[0] = line0
-    lcdText[1] = line1
-    lcdText[2] = line2
-    lcdText[3] = line3
-
-    lcd.messages(lcdText)
+def setText(line1 = "", line2 = "", line3 = "", line4 = ""):
+    lcdDisplay.set(line1, 1)
+    lcdDisplay.set(line2, 2)
+    lcdDisplay.set(line3, 3)
+    lcdDisplay.set(line4, 4)
 
 def addTextToTop(text, update = False):
     # add to top, lose the bottom
-    lcdText[3] = lcdText[2]
-    lcdText[2] = lcdText[1]
-    lcdText[1] = lcdText[0]
-    lcdText[0] = text
-
-    lcd.messages(lcdText)
-    if (update): lcd.messages(lcdText)
+    lcdDisplay.set(lcdDisplay.get(3), 4)
+    lcdDisplay.set(lcdDisplay.get(2), 3)
+    lcdDisplay.set(lcdDisplay.get(1), 2)
+    lcdDisplay.set(text, 1)
 
 def addTextToBottom(text, update = False):
     # add to bottom, lose the first line
-    lcdText[0] = lcdText[1]
-    lcdText[1] = lcdText[2]
-    lcdText[2] = lcdText[3]
-    lcdText[3] = text
-
-    if (update): lcd.messages(lcdText)
+    lcdDisplay.set(lcdDisplay.get(2), 1)
+    lcdDisplay.set(lcdDisplay.get(3), 2)
+    lcdDisplay.set(lcdDisplay.get(4), 3)
+    lcdDisplay.set(text, 4)
