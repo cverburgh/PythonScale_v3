@@ -6,10 +6,10 @@ i2c_address = 0x27
 lcdDisplay = lcd.HD44780(i2c_address)
 
 def screenOn():
-    lcdDisplay.backlight("off")
+    lcdDisplay.backlight("on")
 
 def screenOff():
-    lcdDisplay.backligh("on")
+    lcdDisplay.backlight("off")
 
 def clearText():
     lcdDisplay.set("", 1)
