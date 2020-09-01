@@ -49,7 +49,6 @@ def exitPiScale(args):
             lcd.setText("shutting down...")
             halt()
 
-
 def reboot():
     import os
     os.system("sudo reboot now")

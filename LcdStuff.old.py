@@ -37,5 +37,4 @@ def addTextToBottom(text, update = False):
     lcdDisplay.set(lcdDisplay.get(2), 1)
     lcdDisplay.set(lcdDisplay.get(3), 2)
     lcdDisplay.set(lcdDisplay.get(4), 3)
-    lcdDisplay.set(text, 4
-
+    lcdDisplay.set(text, 4)

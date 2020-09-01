@@ -19,6 +19,10 @@ readyText = "System ready..."
 testingMode = test.mode
 pressAckMsg = GeneralSetup.pressAckMsg
 
+lcd.screenOn()
+lcd.setText("testing the". "LCD screnn", "", "")
+
+
 def alert(msg1, msg2 = "", msg3 = ""):
     lcd.screenOn()
     lcd.setText(msg1, msg2, msg3, pressAckMsg)
