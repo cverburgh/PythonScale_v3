@@ -32,8 +32,6 @@ def alert(msg1, msg2 = "", msg3 = ""):
 
 try:
     while (True):   
-        lcd.addTextToBottom("waiting for input")
-        time.sleep(2)
         # exit by pressing the Exit button
         # .getData returns the PartWeightResult object
         pw = mySerial.getData(testingMode)
