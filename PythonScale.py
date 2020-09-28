@@ -32,11 +32,13 @@ def alert(msg1, msg2 = "", msg3 = ""):
 
 try:
     while (True):   
-        #exit by pressing the Exit button
+        lcd.addTextToBottom("waiting for input")
+        time.sleep(2)
+        # exit by pressing the Exit button
         # .getData returns the PartWeightResult object
         pw = mySerial.getData(testingMode)
 
-        # no data from scale, keep on truckin' 
+        # no data from scale?, keep on truckin' 
         if (pw.hasData == False): continue
     
         lcd.addTextToBottom("Received data:")
